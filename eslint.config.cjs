@@ -3,8 +3,8 @@ module.exports = {
     node: true,
     browser: true,
   },
-  extends: ['plugin:vue/strongly-recommended', 'eslint:recommended', '@vue/typescript/recommended', 'prettier'],
-  plugins: ['@typescript-eslint', 'prettier'],
+  extends: ['plugin:vue/vue3-recommended', 'eslint:recommended', '@vue/typescript/recommended', 'prettier'],
+  plugins: ['vue', '@typescript-eslint', 'prettier'],
   overrides: [
     {
       env: {
@@ -19,11 +19,11 @@ module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    /*ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: ['./tsconfig.json', './tsconfig.node.json'],
-        tsconfigRootDir: __dirname,
-        extraFileExtensions: ['vue'],*/
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+    extraFileExtensions: ['vue'],
   },
   settings: {
     typescript: {
