@@ -1,0 +1,16 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "embeddedLanguageFormatting": "auto",
+  "arrowParens": "avoid",
+  "bracketSameLine": false,
+  "printWidth": 120,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "importOrder": ["^(vue$)", "<THIRD_PARTY_MODULES>", "^@/", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}
