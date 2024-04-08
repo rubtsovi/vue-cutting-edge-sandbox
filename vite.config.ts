@@ -4,11 +4,12 @@ import dns from 'dns';
 import fs from 'fs';
 import path from 'path';
 import { CommonServerOptions, defineConfig } from 'vite';
+import styleX from 'vite-plugin-stylex';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 const IS_SECURE = process.env.IS_SECURE === 'true';
 
-const vitePlugins = [vue(), tsconfigPaths()];
+const vitePlugins = [vue(), tsconfigPaths(), styleX()];
 let httpsConfig: CommonServerOptions['https'];
 if (IS_SECURE) {
   configureSsl();
@@ -25,6 +26,13 @@ export default defineConfig(({ mode }) => ({
   build: {
     minify: mode === 'production' ? 'esbuild' : false,
     sourcemap: mode === 'staging',
+  },
+  resolve: {
+    alias: {
+      '@/utils': path.resolve(__dirname, 'src', 'lib', 'utils.ts'),
+      '@/ui': path.resolve(__dirname, 'src', 'components', 'ui'),
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
 }));
 
